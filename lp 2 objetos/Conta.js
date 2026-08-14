@@ -1,6 +1,6 @@
 
 class Conta {
-  constructor(agencia, numero, cliente, saldo) {
+  constructor(agencia, numero, cliente, saldo = 0) {
     this.agencia = agencia
     this.numero = numero
     this.cliente = cliente
@@ -35,8 +35,32 @@ class Conta {
   }
 }
 
-//conta corrente desconta 1 real por extrato impresso
 
+
+//conta corrente desconta 1 real por extrato impresso
+//classe conta corrente herda tudo de Conta 
+class ContaCorrente extends Conta {
+
+      constructor(agencia,numero,cliente,saldo,taxa){
+        super(agencia,numero,cliente,saldo)
+        this.taxa = taxa 
+      }
+
+
+
+
+
+
+    imprimirExtrato() {
+      this.saldo--
+    console.log(`-----------------------------`)
+    console.log(`Cliente: ${this.cliente}`)
+    console.log(`Agência: ${this.agencia}`)
+    console.log(`Conta: ${this.numero}`)
+    console.log(`Saldo: R$ ${this.saldo}`)
+    console.log(`-----------------------------`)
+  }
+}
 
 // Criando a conta do Gabriel
 const contaDoGabriel = new Conta(
@@ -45,6 +69,11 @@ const contaDoGabriel = new Conta(
   "Gabriel",
   100
 )
+
+var contaDaAdrasteia  = new ContaCorrente(123,111,'Adastreia',100)
+contaDaAdrasteia.imprimirExtrato()
+contaDaAdrasteia.imprimirExtrato()
+contaDaAdrasteia.imprimirExtrato()
 
 // Exibindo o saldo inicial
 contaDoGabriel.imprimirExtrato()
