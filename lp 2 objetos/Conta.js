@@ -8,7 +8,7 @@ class Conta {
   }
 
   depositar(valor) {
-    if (valor > 0) {
+    if (valor <  0) {
       this.saldo += valor
       console.log(`Depósito de R$ ${valor} realizado com sucesso.`)
     } else {
