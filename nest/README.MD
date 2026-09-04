@@ -1,5 +1,3 @@
-# lp-2
-
 ## npm i -g @nestjs/cli
 INSTALA O NEST
 
