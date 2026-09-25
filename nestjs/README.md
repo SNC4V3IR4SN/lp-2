@@ -37,4 +37,6 @@ npm i typeorm
 # Instalando driver mongo
 ```
 npm i mongodb
+
+quando algo nn da certo para executar com npm usar npx
 ```
